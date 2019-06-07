@@ -1,4 +1,5 @@
 from datetime import timedelta
+import itertools as it
 
 
 def file_to_dict(file_path):
@@ -47,3 +48,22 @@ def dict_list_to_presence_minutes_report(students_presence_dict):
         report_list.append(alumni_string)
         print(alumni_string)
     return report_list
+
+
+def dict_list_to_student_movement_report(students_presence_dict):
+    report_list = list()
+    for key, presence_list in students_presence_dict.items():
+        day_strings = list()
+        for day, group in it.groupby(presence_list, key=get_presence_day):
+                #print(key, day, list(group))
+            classrooms = [get_presence_clasroom(presence) for presence in group]
+            day_strings.append((' -> ').join(classrooms))
+        print('{}: {}'.format(key, (',').join(day_strings)))
+
+
+def get_presence_day(presence):
+    return presence[0]
+
+
+def get_presence_clasroom(presence):
+    return presence[3]

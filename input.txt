@@ -2,5 +2,9 @@ Student Marco
 Student David
 Student Fran
 Presence Marco 1 09:02 10:17 R100
-Presence Marco 3 10:58 12:05 R205
-Presence David 5 14:02 15:46 F505
+Presence Marco 1 12:01 13:35 R105
+Presence Marco 1 14:29 16:03 R105
+Presence Marco 3 10:58 12:05 R100
+Presence David 4 14:02 15:46 R205
+Presence David 5 14:05 15:40 R305
+Presence David 5 16:05 17:32 R505
